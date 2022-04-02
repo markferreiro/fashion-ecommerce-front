@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-orange-100 px-3 uppercase">
       <div className="container m-auto max-w-6xl">
         <div className="flex flex-wrap">
-          <div className="mb-7 w-1/4 py-4 sm:w-full md:w-1/2">
+          <div className="mb-7 w-1/4 py-4 md:w-1/2 sm:w-full">
             <h4 className="relative mb-3 border-0">company</h4>
             <ul>
               <li>
@@ -30,7 +30,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="mb-7 w-1/4 py-4 sm:w-full md:w-1/2">
+          <div className="mb-7 w-1/4 py-4 md:w-1/2 sm:w-full">
             <h4 className="relative mb-3 border-0">get help</h4>
             <ul>
               <li>
@@ -50,7 +50,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="mb-7 w-1/4 py-4 sm:w-full md:w-1/2">
+          <div className="mb-7 w-1/4 py-4 md:w-1/2 sm:w-full">
             <h4 className="relative mb-3 border-0">online shop</h4>
             <ul>
               <li>
@@ -67,24 +67,22 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="mb-7 w-1/4 py-4 sm:w-full md:w-1/2">
+          <div className="mb-7 w-1/4 py-4 md:w-1/2 sm:w-full">
             <h4 className="relative mb-3 border-0">follow us</h4>
-            <div className="social-links">
-              <a href="#">
-                <i className="fab fa-facebook-f inline-block h-10 w-10 rounded-full bg-slate-300 text-center leading-10">
-                  face
-                </i>
-              </a>
-              <a href="#">
-                <i className="fab fa-twitter"></i>twi
-              </a>
-              <a href="#">
-                <i className="fab fa-instagram"></i>ins
-              </a>
-              <a href="#">
-                <i className="fab fa-linkedin-in"></i>lin
-              </a>
-            </div>
+            <ul>
+              <li>
+                <a href="#">instagram</a>
+              </li>
+              <li>
+                <a href="#">twitter</a>
+              </li>
+              <li>
+                <a href="#">facebook</a>
+              </li>
+              <li>
+                <a href="#">pinterest</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

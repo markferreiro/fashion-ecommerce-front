@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { UserOutlined, ShoppingOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 
 const Header = () => {
@@ -28,14 +29,22 @@ const Header = () => {
             </Link>
           </li>
           <li className="mr-6">
-            <Link href="/sesionInit/">
+            <Link href="/sesioninit/">
               <a className="border-none text-gray-700 hover:text-gray-900">
                 iniciar sesión
+                <UserOutlined />
               </a>
             </Link>
           </li>
 
-          <li className="mr-6">cesta</li>
+          <li className="mr-6">
+            <Link href="/cesta/">
+              <a className="border-none text-gray-700 hover:text-gray-900">
+                cesta
+                <ShoppingOutlined></ShoppingOutlined>
+              </a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

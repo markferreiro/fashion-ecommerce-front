@@ -1,10 +1,10 @@
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 // import { Meta } from '@/layout/Meta';
 import Layout from '@/components/layout';
 
 const Index = () => {
-  // const router = useRouter();
+  const router = useRouter();
 
   return (
     /* <Main
@@ -19,7 +19,13 @@ const Index = () => {
     </Main> */
     <>
       <Layout>
-        <p>index</p>
+        <div className="h-4/5">
+          <img
+            className="m-auto my-7 h-1/6 w-1/4"
+            src={`${router.basePath}/00-story-workout-sneakers.jpg`}
+            alt=""
+          />
+        </div>
       </Layout>
     </>
   );
