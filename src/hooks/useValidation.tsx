@@ -13,9 +13,8 @@ type IValidateProps = {
 // function Message(
 
 // export const useForm = (callback: any, initialState= {}) => {
-const useValidation = ({ stateInitial, fn }: IValidateProps) => {
-  const [formvalues, setValues] = useState(stateInitial);
-  const [errors, setErrors] = useState({});
+const useValidation = (props: IValidateProps) => {
+  const [formvalues, setValues] = useState(props.stateInitial);
   const [submitForm, setSubmitForm] = useState(false);
 
   /*  useEffect(() => {

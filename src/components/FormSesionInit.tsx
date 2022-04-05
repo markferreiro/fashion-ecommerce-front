@@ -3,37 +3,25 @@ import 'antd/dist/antd.css';
 import Link from 'next/link';
 
 // validations
-import useValidation from '@/hooks/useValidation';
 
 const FormSesionInit = () => {
-  const initialState = {
-    username: '',
-    password: '',
-  };
-
-  const {
-    formvalues,
-    // submitForm,
-    handleChange,
-    handleSubmit,
-  } = useValidation(initialState, sesionInit);
-
-  const { username, password } = formvalues;
-
-  function sesionInit() {
-    console.log('creando cuenta');
-  }
-
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
+  const [form] = Form.useForm();
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
 
+  const onFinish = (values: any) => {
+    console.log('Session init submit', values);
+  };
+
+  const onValuesChange = (changedValues: any, allValues: any) => {
+    console.log('Handle on change', changedValues, allValues);
+  };
+
   return (
     <Form
+      form={form}
       className="m-auto max-w-md"
       layout="vertical"
       name="basic"
@@ -42,15 +30,13 @@ const FormSesionInit = () => {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
+      onValuesChange={onValuesChange}
       autoComplete="off"
-      onSubmit={handleSubmit}
     >
       <Form.Item
         label="Username"
         name="username"
         rules={[{ required: true, message: 'Please input your username!' }]}
-        value={username}
-        onChange={handleChange}
       >
         <Input />
       </Form.Item>
@@ -59,8 +45,6 @@ const FormSesionInit = () => {
         label="Password"
         name="password"
         rules={[{ required: true, message: 'Please input your password!' }]}
-        value={password}
-        onChange={handleChange}
       >
         <Input.Password />
       </Form.Item>
