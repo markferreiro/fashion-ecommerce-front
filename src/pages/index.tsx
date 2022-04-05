@@ -19,7 +19,11 @@ const Index = () => {
     </Main> */
     <>
       <Layout>
-        <div className="h-4/5">
+        <div className="relative w-full">
+          <div className="absolute top-0 left-0 z-30 flex h-full w-full flex-col items-center justify-center">
+            <div className="text-6xl font-bold text-white">bla bla bla</div>
+            <div className="text-2xl text-white">bla bla bla</div>
+          </div>
           <img
             className="m-auto my-7 h-1/6 w-1/4"
             src={`${router.basePath}/00-story-workout-sneakers.jpg`}

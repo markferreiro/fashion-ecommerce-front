@@ -2,7 +2,28 @@ import { Form, Input, Button, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
 import Link from 'next/link';
 
+// validations
+import useValidation from '@/hooks/useValidation';
+
 const FormSesionInit = () => {
+  const initialState = {
+    username: '',
+    password: '',
+  };
+
+  const {
+    formvalues,
+    // submitForm,
+    handleChange,
+    handleSubmit,
+  } = useValidation(initialState, sesionInit);
+
+  const { username, password } = formvalues;
+
+  function sesionInit() {
+    console.log('creando cuenta');
+  }
+
   const onFinish = (values: any) => {
     console.log('Success:', values);
   };
@@ -22,11 +43,14 @@ const FormSesionInit = () => {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
+      onSubmit={handleSubmit}
     >
       <Form.Item
         label="Username"
         name="username"
         rules={[{ required: true, message: 'Please input your username!' }]}
+        value={username}
+        onChange={handleChange}
       >
         <Input />
       </Form.Item>
@@ -35,6 +59,8 @@ const FormSesionInit = () => {
         label="Password"
         name="password"
         rules={[{ required: true, message: 'Please input your password!' }]}
+        value={password}
+        onChange={handleChange}
       >
         <Input.Password />
       </Form.Item>

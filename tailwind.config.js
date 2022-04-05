@@ -16,6 +16,27 @@ module.exports = {
 
       sm: { max: '639px' },
       // => @media (max-width: 639px) { ... }
+
+      xs: { max: '574px' },
+      // => @media (max-width: 574px) { ... }
+
+      minsx: '574px',
+      // => @media (min-width: 574px) { ... }
+
+      minsm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      minmd: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      minlg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      minxl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      min2xl: '1536px',
+      // => @media (min-width: 1536px) { ... }
     },
     fontSize: {
       xs: '0.75rem',
