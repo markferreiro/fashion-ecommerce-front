@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Layout from '@/components/layout';
 import RegistrationForm from '@/components/RegistrationForm';
+import Layout from '@/templates/Layout';
 
 const register = () => {
   return (

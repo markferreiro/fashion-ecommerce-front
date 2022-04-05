@@ -1,26 +1,42 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import { useCallback } from 'react';
+
 import { Form, Input, Button, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
 import Link from 'next/link';
+import { ValidateErrorEntity } from 'rc-field-form/lib/interface';
+
+import { Login } from '@/utils/Login';
+
+interface ILoginData {
+  username: string;
+  password: string;
+  remember: boolean;
+}
 
 // validations
 
 const FormSesionInit = () => {
   const [form] = Form.useForm();
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-  };
+  const onFinish = useCallback((values: ILoginData) => {
+    console.log('Success:', values);
+    Login(values.username, values.password);
+  }, []);
 
-  const onFinish = (values: any) => {
-    console.log('Session init submit', values);
-  };
+  const onFinishFailed = useCallback(
+    (errorInfo: ValidateErrorEntity<ILoginData>) => {
+      console.log('Failed:', errorInfo);
+    },
+    []
+  );
 
-  const onValuesChange = (changedValues: any, allValues: any) => {
+  const onValuesChange = useCallback((changedValues: any, allValues: any) => {
     console.log('Handle on change', changedValues, allValues);
-  };
+  }, []);
 
   return (
-    <Form
+    <Form<ILoginData>
       form={form}
       className="m-auto max-w-md"
       layout="vertical"

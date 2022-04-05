@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'; // es el tipo predeterminado para el atributo de children
 
-import Footer from '@/layout/Footer';
-import Header from '@/layout/Header';
+import { Footer } from '@/components/Footer';
+import Header from '@/components/Header';
 
 type ILayoutProps = {
   // meta: ReactNode;
@@ -12,10 +12,10 @@ const Layout = (props: ILayoutProps) => {
   return (
     <>
       {/*  {props.meta} */}
-      <Header></Header>
+      <Header />
 
       <main>{props.children}</main>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 };

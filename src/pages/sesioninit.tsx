@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormSesionInit from '@/components/FormSesionInit';
-import Layout from '@/components/layout';
+import Layout from '@/templates/Layout';
 
 const sesioninit = () => {
   return (
