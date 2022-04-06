@@ -10,6 +10,9 @@ const FormSesionInit = () => {
     username: '',
     password: '',
   };
+  function sesionInit() {
+    console.log('creando cuenta');
+  }
 
   const {
     formvalues,
@@ -19,10 +22,6 @@ const FormSesionInit = () => {
   } = useValidation(initialState, sesionInit);
 
   const { username, password } = formvalues;
-
-  function sesionInit() {
-    console.log('creando cuenta');
-  }
 
   const onFinish = (values: any) => {
     console.log('Success:', values);
